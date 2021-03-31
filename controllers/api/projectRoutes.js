@@ -1,14 +1,6 @@
 const router = require('express').Router();
 const { Project } = require('../../models');
 
-router.get('/', async (req, res) => {
-  try {
-    const projectData = await Project.findAll();
-    res.status(200).json(projectData);
-  } catch (error) {
-    res.status(500).json(error);
-  }
-});
 
 router.post('/', async (req, res) => {
   try {
