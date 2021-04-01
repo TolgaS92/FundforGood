@@ -1,0 +1,10 @@
+<section class="container">
+    <h3 class="project-name">{{project.name}}</h3>
+    <h4>Date Created: {{project.date_created}}</h4>
+    <h4>Needed Funds: {{project.needed_funding}}</h4>
+    <section class="flex-row justify-center">
+        {{#each projects as |project|}}
+        {{> project-funds}}
+        {{/each}}
+    </section>
+</section>
