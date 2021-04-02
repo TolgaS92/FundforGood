@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
         );
         res.render('homepage', {
             projects,
-            loggedIn: req.session.loggedIn,
+            logged_in: req.session.logged_in,
         });
     } catch (error) {
         console.log(err);
@@ -25,7 +25,7 @@ router.get('/project/:id', withAuth, async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
         const project = projectData.get({ plain: true });
-        res.render('project', { project });
+        res.render('project', { project, logged_in: req.session.logged_in });
     } catch (error) {
         console.log(err);
         res.status(500).json(err);
@@ -33,7 +33,7 @@ router.get('/project/:id', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-    if (req.session.loggedIn) {
+    if (req.session.logged_in) {
       res.redirect('/');
       return;
     }

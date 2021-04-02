@@ -88,9 +88,8 @@ body {
 }
 
 .login-forms {
-  justify-content: center;
   display: flex;
-  margin: 5px 5px;
+  margin: 10px 10px;
   border: 1.75px;
   border-top: black;
   border-style: double;
@@ -98,6 +97,12 @@ body {
 }
 
 .login-card {
+  border: 1.75px;
+  border-top: black;
+  margin: 0px 10px;
+}
+
+.signup-card {
   border: 1.75px;
   border-top: black;
   margin: 0px 10px;
