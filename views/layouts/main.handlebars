@@ -15,9 +15,13 @@
         <h1>Welcome to the Funding for Goods</h1>
     </header>
     <nav>
-        <a href="#">Home</a>
-        <a href="#">Logout</a>
-        <a href="#">Login</a>
+        <a href="/">Home</a>
+        {{#if loggedIn}}
+        <a href="/logout">Logout</a>
+        <a href="/project">New Project</a>
+        {{else}}
+        <a href="/login">Login</a>
+        {{/if}}
     </nav>
     <main>
         <aside>
@@ -27,6 +31,9 @@
             {{{body}}}
         </div>
     </main>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 </body>
 
 </html>

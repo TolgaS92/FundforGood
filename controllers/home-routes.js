@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/project/:id', async (req, res) => {
+router.get('/project/:id', withAuth, async (req, res) => {
     try {
         const projectData = await Project.findByPk(req.params.id);
         const project = projectData.get({ plain: true });
@@ -31,5 +31,14 @@ router.get('/project/:id', async (req, res) => {
         res.status(500).json(err);
 }
 });
+
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+      res.redirect('/');
+      return;
+    }
+  
+    res.render('login');
+  });
 
 module.exports = router;

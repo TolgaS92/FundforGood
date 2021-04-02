@@ -1,10 +1,9 @@
 <section class="container">
     <h3 class="project-name">{{project.name}}</h3>
-    <h4>Date Created: {{project.date_created}}</h4>
-    <h4>Needed Funds: {{project.needed_funding}}</h4>
-    <section class="flex-row justify-center">
-        {{#each projects as |project|}}
-        {{> project-funds}}
-        {{/each}}
-    </section>
+    <h5>Date Created: {{project.date_created}}</h5>
+    <h5>This project needs: {{project.needed_funding}}$</h5>
+    <hr>
+    <h6>I would like to Fund for this project:</h6>
+    <input type="text" placeholder="FUND AMOUNT" class="form-control">
+    <button type="button" class="fund-button">FUND</button>
 </section>
