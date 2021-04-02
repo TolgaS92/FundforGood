@@ -6,3 +6,9 @@ module.exports = {
       return `${new Date(date).getMonth()}/${new Date(date).getDate()}/  ${new Date(date).getFullYear()}`;
     }
 };
+
+module.exports = {
+  progress_left: (needed, collected) => {
+    return Math.floor((collected / needed) * 100);
+  },
+};
