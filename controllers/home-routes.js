@@ -49,18 +49,19 @@ router.get('/createproject',  (req,res) => {
     }
 });
 
-router.get('/profile/:id', /* withAuth, */ async (req, res) => {
+router.get('/profile', withAuth, async (req, res) => {
     try {
-        const userData = await Project.findByPk(req.params.id);
-        /* const profiles =  userData.map((profile) => 
-        profile.get({ plain:true })
-    );
-        res.render('profile', { profiles, logged_in:req.session.logged_in }); */
-        res.status(200).json(userData);
+        const projectData = await Project.findOne({
+            where: {
+                user_id: req.session.user_id
+            }
+        });
+        const project = projectData.get({ plain: true });
+        res.render('project', { project, logged_in: req.session.logged_in });
     } catch (error) {
-        res.status(500).json(error);
-    }
-  });
-
+        console.log(err);
+        res.status(500).json(err);
+}
+});
 
 module.exports = router;
