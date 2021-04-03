@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-100">
 
 <head>
     <meta charset="UTF-8">
@@ -16,8 +16,8 @@
     </header>
     <nav>
         <a href="/">Home</a>
-        <a href="/createproject">New Project</a>
         {{#if logged_in}}
+        <a href="/createproject">New Project</a>
         <a id="logout">Logout</a>
         {{else}}
         <a href="/login">Login</a>
@@ -25,7 +25,7 @@
     </nav>
     <main>
         <aside>
-            <h2>Checkout the new projects</h2>
+            <h2>Checkout the new projects and show your generousness</h2>
         </aside>
         <div class="project">
             {{{body}}}

@@ -1,26 +1,31 @@
 header {
   padding: 30px;
-  background-color: rgb(54, 56, 55);
+  background-image: url('../images/smoke.jpg');
+  background-position-x: 500px;
+  background-position-y: 480px;
   color: white;
   text-align: center;
 }
 nav {
   padding: 15px;
   display: flex;
-  background-color: wheat;
+  background-color: rgb(20, 58, 88);
 }
 
 nav a {
-  color: rgb(59, 58, 57);
-  padding: 12px 16px;
-  background-color: wheat;
+  color: rgb(253, 252, 251);
+  padding: 8px 12px;
+  font-weight: bold;
+  font-size: 22px;
+  background-color: rgb(20, 58, 88);
   text-align: center;
   text-decoration: none;
 }
 
 nav a:hover {
   color: azure;
-  background-color: darkorange;
+  background-color: rgb(138, 181, 216);
+  text-decoration: none;
 }
 
 main {
@@ -31,10 +36,9 @@ main {
 
 aside {
   flex: 0;
-  background-color: rgb(99, 99, 4);
   text-align: left;
-  padding: 100px;
-  color: antiquewhite;
+  padding: 50px;
+  color: #fff;
 }
 
 body {
@@ -43,7 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-color: beige;
+  background-image: url('../images/background.jpg');
 }
 
 .jumbotron {
@@ -61,12 +65,11 @@ body {
 }
 
 .jumbotron a {
-  color: black;
+  color: rgb(233, 229, 229);
   text-decoration: none;
 }
 .project {
   flex: 1;
-  background-color: rgb(233, 203, 164);
   padding: 30px;
   display: flex;
   flex-flow: wrap;
@@ -76,6 +79,12 @@ body {
 
 .project-name {
   text-align: center;
+  color: #eee;
+}
+
+h5,
+h6 {
+  color: #eee;
 }
 
 .fund-button {
@@ -111,10 +120,10 @@ body {
 .progress {
   display: -ms-flexbox;
   display: flex;
-  height: 1rem;
+  height: 3rem;
   overflow: hidden;
   line-height: 0;
-  font-size: 0.75rem;
+  font-size: 1rem;
   background-color: #eee;
   border-radius: 0.25rem;
 }
@@ -130,7 +139,7 @@ body {
   text-align: center;
   white-space: nowrap;
   background-color: #eb6864;
-  transition: width 0.6s ease;
+  transition: width 0.9s ease;
 }
 @media (prefers-reduced-motion: reduce) {
   .progress-bar {
@@ -140,4 +149,9 @@ body {
 
 #logout {
   cursor: pointer;
+}
+
+.form-group label {
+  color: #eee;
+  text-decoration: underline;
 }
