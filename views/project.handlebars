@@ -1,21 +1,24 @@
-<section class="container">
-    <h3 class="project-name">{{project.name}}</h3>
-    <h5>Date Created: {{project.date_created}}</h5>
-    <h5>This project needs: {{project.needed_funding}}$</h5>
-    <div>
-        <div class="progress mb-2">
-            <div class="progress-bar bg-primary"
-                style="width: {{ progress_left project.needed_funding project.collected_funding}}%" role="progressbar"
-                aria-valuenow="{{progress_left project.needed_funding project.collected_funding}}" aria-valuemin="0"
-                aria-valuemax="100">
-                <span>
-                    {{progress_left project.needed_funding project.collected_funding}}% funded
-                </span>
+<div class="col-sm-12">
+    <section class="container">
+        <h3 class="project-name">{{project.name}}</h3>
+        <h5>Date Created: {{project.date_created}}</h5>
+        <h5>This project needs: {{project.needed_funding}}$</h5>
+        <div>
+            <div class="progress mb-2">
+                <div class="progress-bar bg-primary"
+                    style="width: {{ progress_left project.needed_funding project.collected_funding}}%"
+                    role="progressbar"
+                    aria-valuenow="{{progress_left project.needed_funding project.collected_funding}}" aria-valuemin="0"
+                    aria-valuemax="100">
+                    <span>
+                        {{progress_left project.needed_funding project.collected_funding}}% funded
+                    </span>
+                </div>
             </div>
         </div>
-    </div>
-    <hr>
-    <h6>I would like to Fund for this project:</h6>
-    <input type="text" placeholder="FUND AMOUNT" class="form-control">
-    <button type="button" class="fund-button">FUND</button>
-</section>
+        <hr>
+        <h6>I would like to Fund for this project:</h6>
+        <input type="text" placeholder="FUND AMOUNT" class="form-control">
+        <button type="button" class="fund-button">FUND</button>
+    </section>
+</div>

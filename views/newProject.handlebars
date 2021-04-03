@@ -1,24 +1,27 @@
 <form method="POST" action="/api/projects" class="text-center">
     <div class="project-adding">
         <div class="form-group">
-            <label for="name">Name for Project:</label>
-            <input class="form-input" type="text" id="project-name" name="name">
+            <label for="name">Name for Project:<input class="form-input" type="text" id="project-name"
+                    name="name"></label>
         </div>
         <div class="form-group">
-            <label for="description">Brief description about your project:</label>
-            <input class="form-input" type="text" id="project-desc" name="description">
+            <label for="description">Brief description about your project:<input class="form-input" type="text"
+                    id="project-desc" name="description"></label>
         </div>
         <div class="form-group">
-            <label for="date_created">Create day:</label>
-            <input class="form-input" type="text" id="project-date" name="date_created">
+            <label for="date_created">Create day:<input class="form-input" type="text" id="project-date"
+                    name="date_created"></label>
         </div>
         <div class="form-group">
-            <label for="needed_funding">Needed Fund Amount:</label>
-            <input class="form-input" type="text" id="need-fund" type="number">
+            <label for="needed_funding">Needed Fund Amount:<input class="form-input" name="needed_funding"
+                    type="number"></label>
         </div>
         <div class="form-group">
-            <label for="collected_funding">Collected Fund Amount:</label>
-            <input class="form-input" type="text" id="collect-fund" type="number">
+            <label for="collected_funding">Collected Fund Amount:<input class="form-input" name="collected_funding"
+                    type="number"></label>
+        </div>
+        <div class="form-group">
+            <button class="btn btn-primary" type="submit">Create</button>
         </div>
     </div>
 </form>
