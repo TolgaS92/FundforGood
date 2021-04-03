@@ -1,6 +1,6 @@
 const router = require('express').Router();
 
-const { Project } = require('../models');
+const { Project,User } = require('../models');
 
 const withAuth = require('../utils/auth');
 
@@ -14,6 +14,7 @@ router.get('/', async (req, res) => {
         res.render('homepage', {
             projects,
             logged_in: req.session.logged_in,
+            user_id : req.session.user_id
         });
     } catch (error) {
         console.log(err);
@@ -49,7 +50,7 @@ router.get('/createproject',  (req,res) => {
     }
 });
 
-router.get('/profile', withAuth, async (req, res) => {
+/* router.get('/profile', withAuth, async (req, res) => {
     try {
         const projectData = await Project.findOne({
             where: {
@@ -62,6 +63,16 @@ router.get('/profile', withAuth, async (req, res) => {
         console.log(err);
         res.status(500).json(err);
 }
+}); */
+
+router.get('/profile/:id', withAuth, async (req, res) => {
+    const userModel = await User.findByPk(req.params.id, {
+        include: { all:true }
+    }).catch((err) => {
+        res.json(err);
+    });
+    const user = userModel.get({ plain: true });
+    res.render('profile', {user, logged_in:req.session.logged_in, user_id: req.session.user_id });
 });
 
 module.exports = router;

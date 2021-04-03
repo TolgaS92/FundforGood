@@ -18,7 +18,7 @@
         <a href="/">Home</a>
         {{#if logged_in}}
         <a href="/createproject">New Project</a>
-        <a href="/profile">Profile</a>
+        <a href="/profile/{{user_id}}">Profile</a>
         <a id="logout">Logout</a>
         {{else}}
         <a href="/login">Login</a>
