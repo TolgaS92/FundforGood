@@ -1,13 +1,14 @@
 <div class="container">
-    <h3>User ID: {{user.id}}</h3>
+    <h3>User ID: {{id}}</h3>
     <hr>
-    <h3>User Name: {{user.name}}</h3>
+    <h3>User Name: {{name}}</h3>
     <hr>
-    <h3>User E-mail: {{user.email}}</h3>
+    <h3>User E-mail: {{email}}</h3>
 </div>
-{{#each user.projects as |project|}}
+{{#if projects.length}}
 <div class="col-sm-12">
     <section class="container">
+        {{#each projects as |project|}}
         <h3 class="project-name">{{project.name}}</h3>
         <h5>Date Created: {{project.date_created}}</h5>
         <h5>This project needs: {{project.needed_funding}}$</h5>
@@ -24,6 +25,7 @@
                 </div>
             </div>
         </div>
+        {{/each}}
     </section>
 </div>
-{{/each}}
+{{/if}}
